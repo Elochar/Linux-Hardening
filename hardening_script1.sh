@@ -68,7 +68,7 @@ printf "\n" >> $REPORT_FILE
 echo "Updating permissions for Research scripts..."
 
 # Placeholder for command to update permissions
-find -iname '*research*' -exec chmod 770 {} +
+find -iname '*research' -exec chmod 770 {} +
 
 echo "Permissions updated for Research scripts" >> $REPORT_FILE
 printf "\n" >> $REPORT_FILE
