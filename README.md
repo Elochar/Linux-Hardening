@@ -9,7 +9,8 @@ Greetings earthings!
 For the next phase you will secure SSH by auditing the /etc/ssh/sshd_config file. You will change the settings to not permit empty passwords, root login, and ensure you only operate ssh through port 22. Keeping a system up to date is a crucial aspect of cybersecurity, especially to protect from known vulnerabilities. You can run apt upgrade -y.
 	You can check any potentially risky packages that are installed with apt list –installed and remove them with apt autoremove -y. Two packages you want to remove would be telnet and rsh-client. Both of these connection types are unencrypted and vulnerable to man-in-the-middle attacks. Some helpful packages to add would be ufw (manages firewall rules) Lynis (auditing linux) and tripwire (monitors system changes). 
 	It is beneficial to set up logging to help with forensics in case there is a breach on your system. By editing /etc/systemd/journald.conf  to change storage to persistent and systemMaxUse to 300m you can start collecting better logs. In order to prevent logs from taking up too much space you want to rotate logs. By editing the /etc/logrotate.conf file you can enable log rotation from weekly to daily and ensure logs get rotated every 7 days. 
-Adittionally you can schedules these jobs to run via cron...
+ 
+Additionally you can schedules these jobs to run via cron...
 
 At the start of each month:
 0 0 1 * * /path/to/script1
